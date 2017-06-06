@@ -5,8 +5,8 @@ angular.module('video-player')
   templateUrl: 'src/templates/app.html',
 
   controller: function AppController(youTube) {
-    this.videos = window.exampleVideoData;
-    this.currentVideo = this.videos[0];
+    this.videos = null;
+    this.currentVideo = null;
 
     this.selectVideo = (video) => {
       this.currentVideo = video;
@@ -18,6 +18,12 @@ angular.module('video-player')
 
     this.submitResults = (data) => {
       this.videos = data;
+      if (!this.currentVideo) {
+        this.currentVideo = this.videos[0];
+      }
     };
+
+    youTube.search({query: 'cats', key: window.YOUTUBE_API_KEY, max: 5}, this.submitResults);
+
   }
 });

@@ -8,10 +8,10 @@ angular.module('video-player')
   templateUrl: 'src/templates/videoList.html',
 
   controller: function VideoListController() {
-    this.onClick = (video) => {
-      console.log(this);
-      this.selectVideo(video);
-    };
+  //   this.onClick = (video) => {
+  //     console.log(this);
+  //     this.selectVideo(video);
+  //   };
   }
 
 });
