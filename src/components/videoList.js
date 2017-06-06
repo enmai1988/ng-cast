@@ -2,14 +2,15 @@ angular.module('video-player')
 .component('videoList', {
   bindings: {
     videos: '<',
-    selectVideo: '&'
+    selectVideo: '<'
   },
 
   templateUrl: 'src/templates/videoList.html',
 
   controller: function VideoListController() {
     this.onClick = (video) => {
-      this.selectVideo({video: video});
+      console.log(this);
+      this.selectVideo(video);
     };
   }
 
