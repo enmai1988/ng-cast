@@ -1,13 +1,13 @@
 angular.module('video-player')
 .service('youTube', function($http) {
-  this.search = function(params, callback) {
+  this.search = function(keyword, callback) {
     return $http({
       method: 'GET',
       url: 'https://www.googleapis.com/youtube/v3/search',
       params: {
-        q: params.query,
-        max: params.max,
-        key: params.key,
+        q: keyword,
+        max: 5,
+        key: window.YOUTUBE_API_KEY,
         type: 'video',
         part: 'snippet',
         videoEmbeddable: true

@@ -13,7 +13,7 @@ angular.module('video-player')
     };
 
     this.searchResults = (keyword) => {
-      youTube.search({query: keyword, key: window.YOUTUBE_API_KEY, max: 5}, this.submitResults);
+      youTube.search(keyword, this.submitResults);
     };
 
     this.submitResults = (data) => {
@@ -23,7 +23,7 @@ angular.module('video-player')
       }
     };
 
-    youTube.search({query: 'cats', key: window.YOUTUBE_API_KEY, max: 5}, this.submitResults);
+    youTube.search('cat', this.submitResults);
 
   }
 });

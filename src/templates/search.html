@@ -1,6 +1,6 @@
 <div class="search-bar form-inline">
-  <input ng-model="keyword" ng-model-options="{updateOn: 'blur', debounce: 500}" ng-keyup="$ctrl.result(keyword)" class="form-control" type="text" />
-  <button ng-click="$ctrl.result(keyword)" class="btn">
+  <input ng-model="$ctrl.str" ng-change="$ctrl.search($ctrl.str)" ng-model-options="{debounce: 500}" class="form-control" type="text" />
+  <button ng-click="$ctrl.search($ctrl.str)" class="btn">
     <span class="glyphicon glyphicon-search"></span>
   </button>
 </div>
